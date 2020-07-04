@@ -1,4 +1,5 @@
 const express = require('express');
+const Joi = require('@hapi/joi');
 const app = express();
 
 app.use(express.json());
@@ -32,16 +33,29 @@ app.get('/users/:id', (req, res) => {
 });
 
 app.post('/users', (req, res) => {
-    const newUser = {
-        id: users.length + 1,
-        name: req.body.name,
-        surname: req.body.surname,
-        age: req.body.age
+
+    const schema = Joi.object({
+        name: Joi.string().min(3).max(30).required(),
+        surname: Joi.string().min(3).max(30).required(),
+        age: Joi.number().integer().min(10).max(99).required()
+    });
+
+    const result = schema.validate(req.body);
+
+    if(result.error) {
+        res.status(400).send(result.error.details[0].message);
+    } else {
+        const newUser = {
+            id: users.length + 1,
+            name: req.body.name,
+            surname: req.body.surname,
+            age: req.body.age
+        }
+    
+        users.push(newUser);
+    
+        res.send(newUser);
     }
-
-    users.push(newUser);
-
-    res.send(newUser);
 });
 
 app.listen(3000, () => {
