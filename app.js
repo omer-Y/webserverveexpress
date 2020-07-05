@@ -1,9 +1,19 @@
 const express = require('express');
+const morgan = require('morgan');
+const fs = require('fs');
+const path = require('path');
 const Joi = require('@hapi/joi');
-const { ValidationError, func } = require('@hapi/joi');
 const app = express();
 
-app.use(express.json());
+app.use(express.json()); 
+app.use(express.urlencoded({extended : true})); 
+app.use(express.static('public'));
+
+// create a write stream (in append mode)
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
+
+// setup the logger
+app.use(morgan('combined', { stream: accessLogStream }))
 
 const users = [
     { id: 1,  name: 'Ömer', surname: 'Yelkenci', age: '27'},

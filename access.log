@@ -1,0 +1,7 @@
+::1 - - [05/Jul/2020:08:30:55 +0000] "GET /users HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4181.9 Safari/537.36"
+::1 - - [05/Jul/2020:08:31:05 +0000] "GET /users/1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4181.9 Safari/537.36"
+::1 - - [05/Jul/2020:08:34:53 +0000] "GET /users/1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4181.9 Safari/537.36"
+::1 - - [05/Jul/2020:08:35:00 +0000] "GET /users/1 HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4181.9 Safari/537.36"
+::1 - - [05/Jul/2020:08:35:29 +0000] "PUT /users/3 HTTP/1.1" 200 56 "-" "PostmanRuntime/7.25.0"
+::1 - - [05/Jul/2020:08:35:31 +0000] "PUT /users/3 HTTP/1.1" 200 56 "-" "PostmanRuntime/7.25.0"
+::1 - - [05/Jul/2020:08:35:31 +0000] "PUT /users/3 HTTP/1.1" 200 56 "-" "PostmanRuntime/7.25.0"
